@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [],
+      "label": "npm: dev (Start Full-Stack)",
+      "detail": "Starts Express server with Vite and spawns Python backend on port 5001",
+      "isBackground": true,
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "group": "build",
+      "problemMatcher": ["$tsc"],
+      "label": "npm: build"
+    },
+    {
+      "type": "shell",
+      "command": "python3 backend/app.py 5001 || python backend/app.py 5001",
+      "problemMatcher": [],
+      "label": "python: run backend standalone",
+      "isBackground": true
+    }
+  ]
+}
